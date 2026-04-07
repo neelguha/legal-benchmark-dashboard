@@ -1,0 +1,240 @@
+# Default system prompt applied to all models (can be overridden per-model)
+default_system_prompt: "Answer with 'The answer is ' followed by your answer."
+
+models:
+  # Anthropic
+  claude-haiku-4.5:
+    provider: anthropic
+    model_id: claude-haiku-4-5-20251001
+    display_name: Claude Haiku 4.5
+    developer: Anthropic
+    max_tokens: 8192
+    open_weight: false
+
+  claude-sonnet-4.6:
+    provider: anthropic
+    model_id: claude-sonnet-4-6
+    display_name: Claude Sonnet 4.6
+    developer: Anthropic
+    max_tokens: 8192
+    effort: max
+    open_weight: false
+
+  claude-opus-4.6:
+    provider: anthropic
+    model_id: claude-opus-4-6
+    display_name: Claude Opus 4.6
+    developer: Anthropic
+    max_tokens: 8192
+    effort: max
+    open_weight: false
+
+  # OpenAI - Legacy
+  gpt-3.5-turbo:
+    provider: openai
+    model_id: gpt-3.5-turbo-0125
+    display_name: GPT-3.5 Turbo
+    developer: OpenAI
+    max_tokens: 4096
+    open_weight: false
+
+  gpt-4o-mini:
+    provider: openai
+    model_id: gpt-4o-mini
+    display_name: GPT-4o Mini
+    developer: OpenAI
+    max_tokens: 4096
+    open_weight: false
+
+  # OpenAI - GPT-5 family
+  gpt-5-mini:
+    provider: openai
+    model_id: gpt-5-mini-2025-08-07
+    display_name: GPT-5 Mini
+    developer: OpenAI
+    max_tokens: 4096
+    # reasoning effort: none, minimal, low, medium, high, xhigh
+    effort: high
+    open_weight: false
+
+  # OpenAI - GPT-5.4 family (frontier)
+  gpt-5.4:
+    provider: openai
+    model_id: gpt-5.4
+    display_name: GPT-5.4
+    developer: OpenAI
+    max_tokens: 8192
+    # reasoning effort: none, low, medium, high, xhigh
+    effort: xhigh
+    open_weight: false
+
+  gpt-5.4-mini:
+    provider: openai
+    model_id: gpt-5.4-mini
+    display_name: GPT-5.4 Mini
+    developer: OpenAI
+    max_tokens: 8192
+    effort: xhigh
+    open_weight: false
+
+  gpt-5.4-nano:
+    provider: openai
+    model_id: gpt-5.4-nano
+    display_name: GPT-5.4 Nano
+    developer: OpenAI
+    max_tokens: 4096
+    open_weight: false
+
+  # xAI - Grok (use generate_xai_predictions.py instead of batch)
+  grok-4.1-fast-reasoning:
+    provider: xai
+    model_id: grok-4-1-fast-reasoning
+    display_name: Grok 4.1 Fast (Reasoning)
+    developer: xAI
+    max_tokens: 8192
+    open_weight: false
+
+  grok-4.1-fast-non-reasoning:
+    provider: xai
+    model_id: grok-4-1-fast-non-reasoning
+    display_name: Grok 4.1 Fast (Non-Reasoning)
+    developer: xAI
+    max_tokens: 8192
+    open_weight: false
+
+  grok-4.2-reasoning:
+    provider: xai
+    model_id: grok-4.20-0309-reasoning
+    display_name: Grok 4.2 (Reasoning)
+    developer: xAI
+    max_tokens: 8192
+    open_weight: false
+
+  grok-4.2-non-reasoning:
+    provider: xai
+    model_id: grok-4.20-0309-non-reasoning
+    display_name: Grok 4.2 (Non-Reasoning)
+    developer: xAI
+    max_tokens: 8192
+    open_weight: false
+
+  # Google - Gemini 3 (thinking_level: minimal, low, medium, high)
+  gemini-3.1-pro:
+    provider: google
+    model_id: gemini-3.1-pro-preview
+    display_name: Gemini 3.1 Pro
+    developer: Google
+    max_tokens: 8192
+    thinking_level: high
+    open_weight: false
+
+  gemini-3-flash:
+    provider: google
+    model_id: gemini-3-flash-preview
+    display_name: Gemini 3 Flash
+    developer: Google
+    max_tokens: 8192
+    thinking_level: high
+    open_weight: false
+
+  gemini-3.1-flash-lite:
+    provider: google
+    model_id: gemini-3.1-flash-lite-preview
+    display_name: Gemini 3.1 Flash Lite
+    developer: Google
+    max_tokens: 8192
+    thinking_level: high
+    open_weight: false
+
+  # OpenRouter (use generate_openrouter_predictions.py)
+  # Model IDs: https://openrouter.ai/models
+  mimo-v2-pro:
+    provider: openrouter
+    model_id: xiaomi/mimo-v2-pro
+    display_name: MiMo V2 Pro
+    developer: Xiaomi
+    max_tokens: 8192
+    reasoning: true
+    open_weight: true
+
+  minimax-m2.7:
+    provider: openrouter
+    model_id: minimax/minimax-m2.7
+    display_name: MiniMax M2.7
+    developer: MiniMax
+    max_tokens: 8192
+    reasoning: true
+    open_weight: false
+
+  deepseek-v3.2:
+    provider: openrouter
+    model_id: deepseek/deepseek-v3.2
+    display_name: DeepSeek V3.2
+    developer: DeepSeek
+    max_tokens: 8192
+    open_weight: true
+
+  glm-5-turbo:
+    provider: openrouter
+    model_id: z-ai/glm-5-turbo
+    display_name: GLM-5 Turbo
+    developer: Zhipu AI
+    max_tokens: 8192
+    open_weight: true
+
+  nemotron-3-super:
+    provider: openrouter
+    model_id: nvidia/nemotron-3-super-120b-a12b
+    display_name: Nemotron 3 Super 120B
+    developer: NVIDIA
+    max_tokens: 8192
+    open_weight: true
+
+  trinity-large-thinking:
+    provider: openrouter
+    model_id: arcee-ai/trinity-large-thinking
+    display_name: Trinity Large (Thinking)
+    developer: Arcee AI
+    max_tokens: 8192
+    reasoning: true
+    open_weight: true
+
+  gemma-4-31b:
+    provider: openrouter
+    model_id: google/gemma-4-31b-it
+    display_name: Gemma 4 31B
+    developer: Google
+    max_tokens: 8192
+    open_weight: true
+
+  gpt-oss-120b:
+    provider: openrouter
+    model_id: openai/gpt-oss-120b:nitro
+    display_name: GPT-OSS 120B
+    developer: OpenAI
+    max_tokens: 8192
+    open_weight: true
+
+  qwen3.5-flash:
+    provider: openrouter
+    model_id: qwen/qwen3.5-flash-02-23
+    display_name: Qwen 3.5 Flash
+    developer: Alibaba
+    max_tokens: 8192
+    open_weight: true
+
+  kimi-k2.5:
+    provider: openrouter
+    model_id: moonshotai/kimi-k2.5
+    display_name: Kimi K2.5
+    developer: Moonshot AI
+    max_tokens: 8192
+    open_weight: true
+
+  mercury-2:
+    provider: openrouter
+    model_id: inception/mercury-2
+    display_name: Mercury 2
+    developer: Inception
+    max_tokens: 8192
+    open_weight: true

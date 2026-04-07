@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Eval</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, sans-serif;
+            color: #000;
+            background: #fff;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+        h1 { font-size: 1.6rem; font-weight: 600; line-height: 1.3; }
+        .sub { color: #888; font-size: 0.8rem; margin-bottom: 0.5rem; }
+        .sub a { color: #888; }
+        .byline { color: #888; font-size: 0.8rem; margin-bottom: 1.25rem; }
+        .byline a { color: #555; text-decoration: underline; }
+        .note { color: #888; font-size: 0.75rem; margin-bottom: 0.5rem; font-style: italic; }
+
+        .table-wrap { overflow-x: auto; margin-bottom: 1rem; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { text-align: left; padding: 0.35rem 0.5rem; font-size: 0.8rem; white-space: nowrap; }
+        th { font-weight: 600; border-bottom: 1px solid #000; user-select: none; }
+        th.num { text-align: right; }
+        th.sortable { cursor: pointer; }
+        th.sortable:hover { color: #555; }
+        th.sorted-desc::after { content: " ↓"; color: #000; font-size: 1em; font-weight: 600; }
+        th.sorted-asc::after { content: " ↑"; color: #000; font-size: 1em; font-weight: 600; }
+        td { border-bottom: 1px solid #eee; }
+        td.num { text-align: right; font-variant-numeric: tabular-nums; }
+        tr:last-child td { border-bottom: none; }
+        td.sort-col, th.sort-col { background: #f7f7f7; }
+
+        .r { color: #ccc; }
+        .d { color: #888; }
+        .o { font-size: 0.6rem; color: #888; border: 1px solid #ddd; padding: 0 0.2rem; border-radius: 2px; margin-left: 0.25rem; vertical-align: middle; }
+        .overall { font-weight: 600; }
+        .dash { color: #ccc; }
+
+        h2 { font-size: 0.9rem; font-weight: 600; margin: 2rem 0 0.4rem; }
+        .about { color: #555; font-size: 0.8rem; }
+        .about p { margin-bottom: 0.75rem; }
+        .about ul { margin: 0 0 0.75rem 1.2rem; padding: 0; }
+        .about li { margin-bottom: 0.35rem; }
+        .about a { color: #555; text-decoration: underline; }
+        .about code { font-family: ui-monospace, monospace; font-size: 0.9em; background: #f4f4f4; padding: 0 0.2rem; border-radius: 2px; }
+
+        hr { border: none; border-top: 1px solid #eee; margin: 2.5rem 0 1rem; }
+        footer { color: #ccc; font-size: 0.72rem; }
+        footer a { color: #aaa; text-decoration: none; }
+
+        .meta-info { color: #ccc; font-size: 0.7rem; margin-top: 0.5rem; }
+        .error { color: #c00; padding: 1rem 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Legal Eval</h1>
+        <div class="sub" id="subtitle"></div>
+        <div class="byline">Maintained by <a href="https://neelguha.github.io/">Neel Guha</a>. Reach out with questions, comments, or concerns.</div>
+
+        <div class="note">All reported results are accuracy (%).</div>
+
+        <div class="table-wrap">
+            <table id="leaderboard">
+                <thead><tr id="thead-row"></tr></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+
+        <div class="meta-info" id="meta"></div>
+
+        <h2>About</h2>
+        <div class="about">
+            <p>Code for replicating these results can be found <a href="https://github.com/neelguha/legal-benchmark-dashboard">here</a>.</p>
+
+            <ul>
+                <li><strong>LegalBench</strong> — we use 159 tasks from the original <a href="https://arxiv.org/abs/2308.11462">LegalBench</a> paper. We downsample each task to 50 samples.</li>
+                <li><strong>BarExam</strong> — a publicly released subset of MBE questions, taken from <a href="https://arxiv.org/abs/2505.03970">Zheng et al. (2025)</a>.</li>
+                <li><strong>HousingQA</strong> — a set of statutory reasoning questions in which the LLM answers a question with reference to a statute. These are taken from <a href="https://arxiv.org/abs/2505.03970">Zheng et al. (2025)</a>. We subsample the original dataset down, taking 50 per question type.</li>
+                <li><strong>LEXam</strong> — English-language questions in the 32-choice regime from the original <a href="https://lexam-benchmark.github.io/">LEXam paper</a>.</li>
+                <li><strong>Hallucinations</strong> — a subset of questions from <a href="https://arxiv.org/abs/2401.01301">Dahl et al. (2024)</a>. We focus on four tasks with verifiable answers (<code>affirm_reverse</code>, <code>case_existence</code>, <code>citation_retrieval</code>, <code>year_overruled</code>), and subsample 100 from each task.</li>
+            </ul>
+
+            <p>For reproducibility, we make the explicit benchmark data used to produce these results available <a href="https://huggingface.co/datasets/nguha/legal-eval">here</a>.</p>
+
+            <p>All models are run on their highest reasoning setting. Models are prompted to include their answers in a structured format.</p>
+        </div>
+
+        <hr>
+        <footer id="footer"></footer>
+    </div>
+
+    <script>
+        let leaderboard = null;
+        let config = null;
+        let sortKey = "overall";
+        let sortAsc = false;
+
+        async function load() {
+            try {
+                const [lbResp, cfgResp] = await Promise.all([
+                    fetch("data/leaderboard.json"),
+                    fetch("data/benchmarks.json")
+                ]);
+                leaderboard = await lbResp.json();
+                config = await cfgResp.json();
+                render();
+            } catch (e) {
+                document.getElementById("tbody").innerHTML =
+                    '<tr><td colspan="20" class="error">Failed to load data: ' + e.message + '</td></tr>';
+            }
+        }
+
+        function getModelAcc(model, benchKey) {
+            if (benchKey === "overall") return model.overall_accuracy || 0;
+            const b = (model.benchmarks || {})[benchKey];
+            return b ? b.overall_accuracy : null;
+        }
+
+        function fmtPct(v) {
+            if (v === null || v === undefined) return '<span class="dash">—</span>';
+            return (v * 100).toFixed(1);
+        }
+
+        function sortModels() {
+            const models = [...(leaderboard.models || [])];
+            models.sort((a, b) => {
+                let va, vb;
+                if (sortKey === "model") {
+                    va = a.display_name.toLowerCase();
+                    vb = b.display_name.toLowerCase();
+                    return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+                }
+                if (sortKey === "evaluated_at") {
+                    va = a.evaluated_at || "";
+                    vb = b.evaluated_at || "";
+                    return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+                }
+                va = getModelAcc(a, sortKey);
+                vb = getModelAcc(b, sortKey);
+                if (va === null) va = -1;
+                if (vb === null) vb = -1;
+                return sortAsc ? va - vb : vb - va;
+            });
+            return models;
+        }
+
+        function setSort(key) {
+            if (sortKey === key) {
+                sortAsc = !sortAsc;
+            } else {
+                sortKey = key;
+                sortAsc = (key === "model" || key === "evaluated_at");
+            }
+            renderTable();
+        }
+
+        function fmtDate(iso) {
+            if (!iso) return '<span class="dash">—</span>';
+            const d = new Date(iso);
+            if (isNaN(d)) return '<span class="dash">—</span>';
+            return d.toLocaleDateString(undefined, {year: "numeric", month: "short", day: "numeric"});
+        }
+
+        function renderHeader() {
+            const benchOrder = (config.benchmark_order || Object.keys(leaderboard.benchmarks || {}));
+            const cols = [
+                {key: null, label: "", sortable: false, num: false},
+                {key: "model", label: "Model", sortable: true, num: false},
+                {key: "evaluated_at", label: "Date", sortable: true, num: false},
+                {key: "overall", label: "Overall", sortable: true, num: true},
+            ];
+            const benchInfo = leaderboard.benchmarks || {};
+            for (const bk of benchOrder) {
+                const label = (benchInfo[bk] && benchInfo[bk].display_name) || bk;
+                cols.push({key: bk, label: label, sortable: true, num: true});
+            }
+
+            const tr = document.getElementById("thead-row");
+            tr.innerHTML = "";
+            for (const c of cols) {
+                const th = document.createElement("th");
+                if (c.num) th.classList.add("num");
+                if (c.sortable) {
+                    th.classList.add("sortable");
+                    if (sortKey === c.key) {
+                        th.classList.add(sortAsc ? "sorted-asc" : "sorted-desc");
+                        th.classList.add("sort-col");
+                    }
+                    th.addEventListener("click", () => setSort(c.key));
+                }
+                th.appendChild(document.createTextNode(c.label));
+                tr.appendChild(th);
+            }
+        }
+
+        function _sortColIndex() {
+            const benchOrder = (config.benchmark_order || Object.keys(leaderboard.benchmarks || {}));
+            const order = ["model", "evaluated_at", "overall", ...benchOrder];
+            const idx = order.indexOf(sortKey);
+            return idx >= 0 ? idx + 1 : -1; // +1 for the rank column
+        }
+
+        function renderRows() {
+            const benchOrder = (config.benchmark_order || Object.keys(leaderboard.benchmarks || {}));
+            const tbody = document.getElementById("tbody");
+            const models = sortModels();
+            const colKeys = [null, "model", "evaluated_at", "overall", ...benchOrder];
+            tbody.innerHTML = "";
+            models.forEach((m, i) => {
+                const tr = document.createElement("tr");
+                const openBadge = m.open_weight ? '<span class="o">open</span>' : '';
+                const cells = [
+                    `<td class="r${colKeys[0] === sortKey ? ' sort-col' : ''}">${i + 1}</td>`,
+                    `<td${colKeys[1] === sortKey ? ' class="sort-col"' : ''}>${escapeHtml(m.display_name)}${openBadge}</td>`,
+                    `<td class="d${colKeys[2] === sortKey ? ' sort-col' : ''}">${fmtDate(m.evaluated_at)}</td>`,
+                    `<td class="num overall${colKeys[3] === sortKey ? ' sort-col' : ''}">${fmtPct(m.overall_accuracy)}</td>`,
+                ];
+                benchOrder.forEach((bk, bi) => {
+                    const isSort = colKeys[4 + bi] === sortKey;
+                    cells.push(`<td class="num${isSort ? ' sort-col' : ''}">${fmtPct(getModelAcc(m, bk))}</td>`);
+                });
+                tr.innerHTML = cells.join("");
+                tbody.appendChild(tr);
+            });
+        }
+
+        function escapeHtml(s) {
+            const div = document.createElement("div");
+            div.textContent = s;
+            return div.innerHTML;
+        }
+
+        function renderTable() {
+            renderHeader();
+            renderRows();
+        }
+
+        function renderHeaderArea() {
+            document.getElementById("title").textContent = config.title || "Legal Eval";
+
+            const sub = document.getElementById("subtitle");
+            const parts = [];
+            if (config.subtitle) parts.push(escapeHtml(config.subtitle));
+            if (config.links && config.links.length) {
+                parts.push(...config.links.map(l =>
+                    `<a href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`
+                ));
+            }
+            if (parts.length === 0) {
+                sub.style.display = "none";
+            } else {
+                sub.innerHTML = parts.join(" · ");
+            }
+        }
+
+        function renderFooter() {
+            const f = document.getElementById("footer");
+            const hr = document.querySelector("hr");
+            if (config.footer_links && config.footer_links.length) {
+                f.innerHTML = config.footer_links.map(l =>
+                    `<a href="${escapeHtml(l.url)}">${escapeHtml(l.label)}</a>`
+                ).join(" · ");
+            } else {
+                f.style.display = "none";
+                if (hr) hr.style.display = "none";
+            }
+        }
+
+        function renderMeta() {
+            if (leaderboard.generated_at) {
+                const d = new Date(leaderboard.generated_at);
+                document.getElementById("meta").textContent =
+                    `Last updated: ${d.toLocaleDateString()}`;
+            }
+        }
+
+        function render() {
+            renderHeaderArea();
+            renderTable();
+            renderFooter();
+            renderMeta();
+        }
+
+        load();
+    </script>
+</body>
+</html>

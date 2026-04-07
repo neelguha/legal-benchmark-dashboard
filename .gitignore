@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Results (large, regeneratable - download raw files from HF or regenerate)
+results/
+!results/.gitkeep
+
+# Dashboard data — leaderboard.json is committed for GitHub Pages
+# Other generated data files are excluded
+dashboard/data/*.json
+!dashboard/data/leaderboard.json
+
+# Cached prompt templates
+benchmarks/legalbench/prompts/*.txt
+!benchmarks/legalbench/prompts/.gitkeep
+
+# Relay database
+*.db
+*.db-shm
+*.db-wal
+
+# IDE
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
