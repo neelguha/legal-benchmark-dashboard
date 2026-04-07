@@ -16,10 +16,10 @@ env/
 results/
 !results/.gitkeep
 
-# Dashboard data — leaderboard.json is committed for GitHub Pages
-# Other generated data files are excluded
+# Dashboard data — leaderboard.json and benchmarks.json are committed for GitHub Pages
 dashboard/data/*.json
 !dashboard/data/leaderboard.json
+!dashboard/data/benchmarks.json
 
 # Cached prompt templates
 benchmarks/legalbench/prompts/*.txt

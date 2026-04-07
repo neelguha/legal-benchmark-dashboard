@@ -1,0 +1,13 @@
+{
+  "title": "Tracking LLM Performance on Academic Legal Benchmarks",
+  "subtitle": "",
+  "links": [],
+  "footer_links": [],
+  "benchmark_order": [
+    "legalbench",
+    "barexam",
+    "lexam",
+    "housingqa",
+    "legal_hallucinations"
+  ]
+}

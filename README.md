@@ -1,20 +1,12 @@
 # Legal Benchmark Dashboard
 
-A leaderboard and interactive dashboard tracking LLM performance on legal reasoning tasks, powered by [LegalBench](https://huggingface.co/datasets/nguha/legalbench).
+A leaderboard tracking LLM performance on academic legal reasoning benchmarks.
 
-**Live dashboard:** [https://hazyresearch.github.io/legal-benchmark-dashboard](https://hazyresearch.github.io/legal-benchmark-dashboard)
+**Live site:** [https://neelguha.github.io/legal-benchmark-dashboard/](https://neelguha.github.io/legal-benchmark-dashboard/)
 
-## Quick Start
+The leaderboard evaluates models across five legal benchmarks — LegalBench, BarExam (MBE), LEXam, HousingQA, and Legal Hallucinations — sourced from the [`nguha/legal-eval`](https://huggingface.co/datasets/nguha/legal-eval) HuggingFace dataset.
 
-### View the dashboard locally
-
-```bash
-cd dashboard
-python -m http.server 8080
-# Open http://localhost:8080
-```
-
-### Run evaluations
+## Quick start
 
 ```bash
 # 1. Install dependencies
@@ -24,67 +16,63 @@ pip install -r requirements.txt
 cp .env.example .env
 # Edit .env with your API keys
 
-# 3. Quick test (5 samples, instant feedback)
-python run.py test --models claude-haiku-4.5 --sample-size 100
+# 3. Generate predictions for a model
+python generate.py --models claude-haiku-4.5
 
-# 4. Full evaluation via batch API
-python run.py submit --models claude-haiku-4.5
-python run.py status        # check progress
-python run.py download      # download + score + export
+# 4. Score and export to the dashboard
+python run.py score --models claude-haiku-4.5
+
+# 5. Preview the dashboard locally
+cd dashboard && python -m http.server 8080
+# Open http://localhost:8080
 ```
 
-## Running Evaluations
+## Running evaluations
 
-### Batch API (Anthropic, OpenAI, Google)
+Generation and scoring are two separate steps:
 
-The `submit`/`status`/`download` workflow uses provider batch APIs for cost-efficient evaluation:
+### `generate.py` — run a model on the benchmarks
+
+All providers use the same unified script. It makes concurrent direct API calls, saves results incrementally, and resumes on re-run so interrupted jobs pick up where they left off.
 
 ```bash
-# Submit (creates batch job, returns immediately)
-python run.py submit --models claude-sonnet-4.6 gpt-5-mini
+# One model
+python generate.py --models claude-haiku-4.5
 
-# Check progress
-python run.py status
+# Multiple models
+python generate.py --models claude-sonnet-4.6 gpt-5-mini gemini-3.1-pro
 
-# Download results, score, and export leaderboard
-python run.py download
+# All models in models.yaml
+python generate.py --models all
 
-# Score (or re-score) existing raw results
-python run.py score --models claude-sonnet-4.6
+# Limit to specific benchmarks or tasks
+python generate.py --models claude-haiku-4.5 --benchmarks legalbench barexam
+python generate.py --models claude-haiku-4.5 --tasks abercrombie hearsay mbe
+
+# Force re-generation (ignore existing responses)
+python generate.py --models claude-haiku-4.5 --benchmarks lexam --fresh
+
+# Tune concurrency
+python generate.py --models claude-haiku-4.5 --concurrency 20
 ```
 
-### Direct API (xAI, OpenRouter)
+Raw responses are saved to `results/legal-eval/raw/<model_key>.jsonl`.
 
-Some providers don't support batch APIs for all models. Use the standalone generate scripts, which run concurrent direct API calls:
+### `run.py score` — score and export
+
+Scoring reads the raw JSONL files, computes per-task and per-benchmark accuracy, and regenerates `dashboard/data/leaderboard.json`.
 
 ```bash
-# xAI (Grok models)
-python generate_xai_predictions.py --models grok-4.2-non-reasoning grok-4.2-reasoning
-
-# OpenRouter (open-weight and third-party models)
-python generate_openrouter_predictions.py --models mimo-v2-pro deepseek-v3.2
-
-# Google (Gemini models, if batch API is unavailable)
-python generate_google_predictions.py --models gemini-3.1-pro
-
-# Then score
+# Score all models with raw files
 python run.py score
+
+# Or just specific models
+python run.py score --models claude-haiku-4.5 gpt-5-mini
 ```
 
-### Test a new model
+Scored results go to `results/legal-eval/<model_key>.json`. The export runs automatically after scoring.
 
-```bash
-# Verify a model works before full evaluation
-python run.py test-batch --models gpt-5-mini --size 5
-```
-
-### Clean up stale jobs
-
-```bash
-python run.py clean
-```
-
-## Adding Models
+## Adding models
 
 Add an entry to `models.yaml`:
 
@@ -96,51 +84,55 @@ my-model:
   developer: OpenAI             # organization that built the model
   max_tokens: 4096              # max output tokens
   open_weight: false            # true for open-weight models
+
   # Optional provider-specific params:
-  effort: high                  # OpenAI reasoning effort (none/low/medium/high/xhigh)
-  thinking_level: high          # Google Gemini thinking level (minimal/low/medium/high)
+  effort: high                  # OpenAI reasoning effort: low/medium/high
+  thinking_level: high          # Google Gemini: minimal/low/medium/high
   reasoning: true               # OpenRouter: enable reasoning for supported models
+
+  # Optional per-model system prompt override (otherwise uses the default in models.yaml)
+  system_prompt: "Answer briefly."
 ```
 
-## Supported Providers
+Then:
+```bash
+python generate.py --models my-model
+python run.py score --models my-model
+```
 
-| Provider | Env Variable | Batch API | Direct API |
-|----------|-------------|-----------|------------|
-| Anthropic | `ANTHROPIC_API_KEY` | Yes (`run.py submit`) | Yes (`run.py test`) |
-| OpenAI | `OPENAI_API_KEY` | Yes (Responses API) | Yes |
-| xAI | `XAI_API_KEY` | Limited | Yes (`generate_xai_predictions.py`) |
-| Google | `GOOGLE_API_KEY` | Yes | Yes (`generate_google_predictions.py`) |
-| OpenRouter | `OPENROUTER_API_KEY` | No | Yes (`generate_openrouter_predictions.py`) |
+## Supported providers
 
-## Project Structure
+| Provider | Env Variable |
+|----------|-------------|
+| Anthropic | `ANTHROPIC_API_KEY` |
+| OpenAI | `OPENAI_API_KEY` |
+| xAI | `XAI_API_KEY` |
+| Google | `GOOGLE_API_KEY` |
+| OpenRouter | `OPENROUTER_API_KEY` |
+
+All providers are called via direct API (concurrent requests). No batch APIs.
+
+## Project structure
 
 ```
 legal-benchmark-dashboard/
 ├── dashboard/               # Static dashboard (HTML/CSS/JS)
-│   ├── index.html
-│   ├── css/style.css
-│   ├── js/
-│   │   ├── app.js           # Entry point, data loading
-│   │   ├── leaderboard.js   # Main leaderboard table
-│   │   └── taskview.js      # Per-task drill-down view
+│   ├── index.html           # Single-page leaderboard
 │   └── data/
-│       └── leaderboard.json # Exported results (auto-generated)
-├── providers/               # API provider implementations
-│   ├── anthropic_provider.py
-│   ├── openai_provider.py
-│   ├── xai_provider.py
-│   └── google_provider.py
+│       ├── leaderboard.json # Exported results (committed, auto-generated)
+│       └── benchmarks.json  # Page content config (title, links)
 ├── benchmarks/
-│   └── legalbench.py        # Task loading from HuggingFace
-├── run.py                   # Main CLI (submit/status/download/score)
-├── scoring.py               # Answer extraction and evaluation
-├── export.py                # Export results to dashboard JSON
-├── generate_xai_predictions.py
-├── generate_openrouter_predictions.py
-├── generate_google_predictions.py
+│   └── legal_eval.py        # Task loading from nguha/legal-eval
+├── .github/workflows/
+│   └── deploy.yml           # GitHub Pages deployment
+├── generate.py              # Generation entry point (all providers)
+├── run.py                   # Scoring and export
+├── export.py                # Builds leaderboard.json from scored results
+├── scoring.py               # Answer extraction and eval methods
 ├── models.yaml              # Model registry
-├── results/                 # Raw and scored results
-│   └── legalbench/
+├── config.py                # API key loading
+├── results/                 # Raw and scored results (gitignored)
+│   └── legal-eval/
 │       ├── raw/             # Raw model responses (JSONL)
 │       └── *.json           # Scored results per model
 └── .env                     # API keys (not committed)
@@ -148,33 +140,42 @@ legal-benchmark-dashboard/
 
 ## Hosting
 
-The dashboard is a static site (no server required). To deploy:
+The dashboard is a static site (no server required). It's deployed to GitHub Pages via the workflow in `.github/workflows/deploy.yml`, which triggers on every push to `main`.
 
-### GitHub Pages
+To enable Pages on a fork:
 
-1. Push this repo to GitHub
-2. Go to Settings → Pages → Source: "Deploy from a branch"
-3. Select `main` branch, `/dashboard` folder
-4. The dashboard will be live at `https://<org>.github.io/<repo>/`
+1. Push the repo to GitHub
+2. Go to **Settings → Pages**
+3. Under **Source**, select **GitHub Actions** (not "Deploy from a branch")
+4. Push to `main` — the workflow deploys `dashboard/` as the site
 
-### Local
+### Local preview
 
 ```bash
 cd dashboard && python -m http.server 8080
+# Open http://localhost:8080
 ```
 
-## Data Pipeline
+## Data pipeline
 
 ```
-LegalBench (HuggingFace)
-    ↓  load_tasks()
+nguha/legal-eval (HuggingFace)
+    ↓  benchmarks/legal_eval.py load_tasks()
 models.yaml + .env
-    ↓  run.py submit / generate_*.py
-results/legalbench/raw/*.jsonl     ← raw model responses
-    ↓  run.py score
-results/legalbench/*.json          ← scored results per model
-    ↓  export.py
+    ↓  python generate.py
+results/legal-eval/raw/*.jsonl     ← raw model responses
+    ↓  python run.py score
+results/legal-eval/*.json          ← scored results per model
+    ↓  export.py (automatic)
 dashboard/data/leaderboard.json    ← dashboard data
-    ↓
-dashboard/index.html               ← static site
+    ↓  git push
+GitHub Actions → GitHub Pages      ← live site
 ```
+
+## Benchmarks
+
+Details on each benchmark (sources, sampling, prompt construction) are in the dataset README at [`nguha/legal-eval`](https://huggingface.co/datasets/nguha/legal-eval). The site's About section also summarizes them.
+
+## Maintenance
+
+Maintained by [Neel Guha](https://neelguha.com). Reach out with questions, comments, or concerns.
