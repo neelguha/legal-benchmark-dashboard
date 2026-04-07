@@ -178,4 +178,4 @@ Details on each benchmark (sources, sampling, prompt construction) are in the da
 
 ## Maintenance
 
-Maintained by [Neel Guha](https://neelguha.com). Reach out with questions, comments, or concerns.
+Maintained by [Neel Guha](https://neelguha.github.io/). Reach out with questions, comments, or concerns.
