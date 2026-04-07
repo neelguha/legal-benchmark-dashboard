@@ -84,6 +84,7 @@ models:
     developer: OpenAI
     max_tokens: 4096
     open_weight: false
+    system_prompt: "Answer with 'The answer is ' followed by your answer. Read each question carefully. For multiple choice questions, your answer must be one of the lettered choices (e.g., A, B, C, or D). For Yes/No questions, answer with 'Yes' or 'No'. Do not invent answer formats — use exactly the format the question asks for."
 
   # xAI - Grok (use generate_xai_predictions.py instead of batch)
   grok-4.1-fast-reasoning:

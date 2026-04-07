@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-07T04:41:40.712645+00:00",
+  "generated_at": "2026-04-07T14:19:41.129030+00:00",
   "benchmarks": {
     "legalbench": {
       "display_name": "LegalBench",
@@ -25728,6 +25728,2148 @@
       }
     },
     {
+      "model_key": "gpt-3.5-turbo",
+      "display_name": "GPT-3.5 Turbo",
+      "provider": "openai",
+      "developer": "OpenAI",
+      "open_weight": false,
+      "evaluated_at": "2026-04-07T14:15:08.127122+00:00",
+      "overall_accuracy": 0.46453527474544726,
+      "benchmarks": {
+        "legalbench": {
+          "overall_accuracy": 0.6643074003611069,
+          "num_tasks": 159,
+          "per_task": {
+            "abercrombie": {
+              "accuracy": 0.36,
+              "correct": 18,
+              "total": 50
+            },
+            "canada_tax_court_outcomes": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "consumer_contracts_qa": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "contract_nli_confidentiality_of_agreement": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "contract_nli_explicit_identification": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "contract_nli_inclusion_of_verbally_conveyed_information": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "contract_nli_limited_use": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "contract_nli_no_licensing": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "contract_nli_notice_on_compelled_disclosure": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "contract_nli_permissible_acquirement_of_similar_information": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "contract_nli_permissible_copy": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "contract_nli_permissible_development_of_similar_information": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "contract_nli_permissible_post-agreement_possession": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "contract_nli_return_of_confidential_information": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "contract_nli_sharing_with_employees": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "contract_nli_sharing_with_third-parties": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "contract_nli_survival_of_obligations": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "contract_qa": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "corporate_lobbying": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "cuad_affiliate_license-licensee": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_affiliate_license-licensor": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "cuad_anti-assignment": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_audit_rights": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "cuad_cap_on_liability": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "cuad_change_of_control": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "cuad_competitive_restriction_exception": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "cuad_covenant_not_to_sue": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_effective_date": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_exclusivity": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_expiration_date": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "cuad_governing_law": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_insurance": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_ip_ownership_assignment": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "cuad_irrevocable_or_perpetual_license": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "cuad_joint_ip_ownership": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_license_grant": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "cuad_liquidated_damages": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_minimum_commitment": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "cuad_most_favored_nation": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "cuad_no-solicit_of_customers": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "cuad_no-solicit_of_employees": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "cuad_non-compete": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "cuad_non-disparagement": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "cuad_non-transferable_license": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "cuad_notice_period_to_terminate_renewal": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_post-termination_services": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "cuad_price_restrictions": {
+              "accuracy": 0.7608695652173914,
+              "correct": 35,
+              "total": 46
+            },
+            "cuad_renewal_term": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "cuad_revenue-profit_sharing": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_rofr-rofo-rofn": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "cuad_source_code_escrow": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_termination_for_convenience": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "cuad_third_party_beneficiary": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "cuad_uncapped_liability": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "cuad_unlimited-all-you-can-eat-license": {
+              "accuracy": 0.7916666666666666,
+              "correct": 38,
+              "total": 48
+            },
+            "cuad_volume_restriction": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "cuad_warranty_duration": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "definition_classification": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "definition_extraction": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "diversity_1": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "diversity_2": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "diversity_3": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "diversity_4": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "diversity_5": {
+              "accuracy": 0.48,
+              "correct": 24,
+              "total": 50
+            },
+            "diversity_6": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "function_of_decision_section": {
+              "accuracy": 0.2,
+              "correct": 10,
+              "total": 50
+            },
+            "hearsay": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "insurance_policy_interpretation": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "international_citizenship_questions": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "jcrew_blocker": {
+              "accuracy": 0.48,
+              "correct": 24,
+              "total": 50
+            },
+            "learned_hands_benefits": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "learned_hands_business": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "learned_hands_consumer": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "learned_hands_courts": {
+              "accuracy": 0.5,
+              "correct": 25,
+              "total": 50
+            },
+            "learned_hands_crime": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "learned_hands_divorce": {
+              "accuracy": 0.64,
+              "correct": 32,
+              "total": 50
+            },
+            "learned_hands_domestic_violence": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "learned_hands_education": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "learned_hands_employment": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "learned_hands_estates": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "learned_hands_family": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "learned_hands_health": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "learned_hands_housing": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "learned_hands_immigration": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "learned_hands_torts": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "learned_hands_traffic": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "legal_reasoning_causality": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "maud_ability_to_consummate_concept_is_subject_to_mae_carveouts": {
+              "accuracy": 0.26,
+              "correct": 13,
+              "total": 50
+            },
+            "maud_accuracy_of_fundamental_target_rws_bringdown_standard": {
+              "accuracy": 0.26,
+              "correct": 13,
+              "total": 50
+            },
+            "maud_accuracy_of_target_capitalization_rw_(outstanding_shares)_bringdown_standard_answer": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "maud_accuracy_of_target_general_rw_bringdown_timing_answer": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "maud_additional_matching_rights_period_for_modifications_(cor)": {
+              "accuracy": 0.46,
+              "correct": 23,
+              "total": 50
+            },
+            "maud_application_of_buyer_consent_requirement_(negative_interim_covenant)": {
+              "accuracy": 0.18,
+              "correct": 9,
+              "total": 50
+            },
+            "maud_buyer_consent_requirement_(ordinary_course)": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "maud_change_in_law__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "maud_changes_in_gaap_or_other_accounting_principles__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "maud_cor_permitted_in_response_to_intervening_event": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "maud_cor_permitted_with_board_fiduciary_determination_only": {
+              "accuracy": 0.12,
+              "correct": 6,
+              "total": 50
+            },
+            "maud_cor_standard_(intervening_event)": {
+              "accuracy": 0.48,
+              "correct": 24,
+              "total": 50
+            },
+            "maud_cor_standard_(superior_offer)": {
+              "accuracy": 0.34,
+              "correct": 17,
+              "total": 50
+            },
+            "maud_definition_contains_knowledge_requirement_-_answer": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "maud_definition_includes_asset_deals": {
+              "accuracy": 0.36,
+              "correct": 18,
+              "total": 50
+            },
+            "maud_definition_includes_stock_deals": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "maud_fiduciary_exception__board_determination_standard": {
+              "accuracy": 0.34,
+              "correct": 17,
+              "total": 50
+            },
+            "maud_fiduciary_exception_board_determination_trigger_(no_shop)": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "maud_financial_point_of_view_is_the_sole_consideration": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "maud_fls_(mae)_standard": {
+              "accuracy": 0.24,
+              "correct": 12,
+              "total": 50
+            },
+            "maud_general_economic_and_financial_conditions_subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.32,
+              "correct": 16,
+              "total": 50
+            },
+            "maud_includes_consistent_with_past_practice": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "maud_initial_matching_rights_period_(cor)": {
+              "accuracy": 0.18,
+              "correct": 9,
+              "total": 50
+            },
+            "maud_initial_matching_rights_period_(ftr)": {
+              "accuracy": 0.26,
+              "correct": 13,
+              "total": 50
+            },
+            "maud_intervening_event_-_required_to_occur_after_signing_-_answer": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "maud_knowledge_definition": {
+              "accuracy": 0.5,
+              "correct": 25,
+              "total": 50
+            },
+            "maud_liability_standard_for_no-shop_breach_by_target_non-do_representatives": {
+              "accuracy": 0.2,
+              "correct": 10,
+              "total": 50
+            },
+            "maud_ordinary_course_efforts_standard": {
+              "accuracy": 0.38,
+              "correct": 19,
+              "total": 50
+            },
+            "maud_pandemic_or_other_public_health_event__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.26,
+              "correct": 13,
+              "total": 50
+            },
+            "maud_pandemic_or_other_public_health_event_specific_reference_to_pandemic-related_governmental_responses_or_measures": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "maud_relational_language_(mae)_applies_to": {
+              "accuracy": 0.18,
+              "correct": 9,
+              "total": 50
+            },
+            "maud_specific_performance": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "maud_tail_period_length": {
+              "accuracy": 0.28,
+              "correct": 14,
+              "total": 50
+            },
+            "maud_type_of_consideration": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "nys_judicial_ethics": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "opp115_data_retention": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "opp115_data_security": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "opp115_do_not_track": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "opp115_first_party_collection_use": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "opp115_international_and_specific_audiences": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "opp115_policy_change": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "opp115_third_party_sharing_collection": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "opp115_user_access,_edit_and_deletion": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "opp115_user_choice_control": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "oral_argument_question_purpose": {
+              "accuracy": 0.24,
+              "correct": 12,
+              "total": 50
+            },
+            "overruling": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "personal_jurisdiction": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "privacy_policy_entailment": {
+              "accuracy": 1.0,
+              "correct": 50,
+              "total": 50
+            },
+            "privacy_policy_qa": {
+              "accuracy": 1.0,
+              "correct": 50,
+              "total": 50
+            },
+            "proa": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "sara_entailment": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "sara_numeric": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "scalr": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "ssla_company_defendants": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "ssla_individual_defendants": {
+              "accuracy": 0.42,
+              "correct": 21,
+              "total": 50
+            },
+            "ssla_plaintiff": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "successor_liability": {
+              "accuracy": 0.14893617021276595,
+              "correct": 7,
+              "total": 47
+            },
+            "supply_chain_disclosure_best_practice_accountability": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_audits": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_certification": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_training": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_verification": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_accountability": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_audits": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_certification": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_training": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_verification": {
+              "accuracy": 0.74,
+              "correct": 37,
+              "total": 50
+            },
+            "telemarketing_sales_rule": {
+              "accuracy": 0.723404255319149,
+              "correct": 34,
+              "total": 47
+            },
+            "textualism_tool_dictionaries": {
+              "accuracy": 1.0,
+              "correct": 50,
+              "total": 50
+            },
+            "textualism_tool_plain": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "ucc_v_common_law": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "unfair_tos": {
+              "accuracy": 0.36,
+              "correct": 18,
+              "total": 50
+            }
+          }
+        },
+        "legal_hallucinations": {
+          "overall_accuracy": 0.40750000000000003,
+          "num_tasks": 4,
+          "per_task": {
+            "affirm_reverse": {
+              "accuracy": 0.49,
+              "correct": 49,
+              "total": 100
+            },
+            "case_existence": {
+              "accuracy": 0.91,
+              "correct": 91,
+              "total": 100
+            },
+            "citation_retrieval": {
+              "accuracy": 0.12,
+              "correct": 12,
+              "total": 100
+            },
+            "year_overruled": {
+              "accuracy": 0.11,
+              "correct": 11,
+              "total": 100
+            }
+          }
+        },
+        "housingqa": {
+          "overall_accuracy": 0.7018076513790432,
+          "num_tasks": 41,
+          "per_task": {
+            "can_a_tenant_request_that_records_be_made_inaccessible": {
+              "accuracy": 0.8,
+              "correct": 4,
+              "total": 5
+            },
+            "does_a_landlord_waive_their_right_to_evict_for_nonpayment_of_rent_by_accepting_p": {
+              "accuracy": 0.5277777777777778,
+              "correct": 19,
+              "total": 36
+            },
+            "does_a_tenant_forfeit_the_right_to_an_eviction_hearing_by_failing_to_respond_to_": {
+              "accuracy": 0.46153846153846156,
+              "correct": 12,
+              "total": 26
+            },
+            "does_a_tenant_have_to_request_a_stay_of_execution_for_an_appeal": {
+              "accuracy": 0.8260869565217391,
+              "correct": 19,
+              "total": 23
+            },
+            "does_the_filing_of_an_appeal_stay_the_execution_of_a_writ": {
+              "accuracy": 0.6896551724137931,
+              "correct": 20,
+              "total": 29
+            },
+            "does_the_jurisdiction_have_separate_legal_provisions_for_different_types_of_land": {
+              "accuracy": 0.75,
+              "correct": 27,
+              "total": 36
+            },
+            "does_the_law_allow_a_landlord_to_include_a_lease_provision_whereby_a_tenant_waiv": {
+              "accuracy": 0.46,
+              "correct": 23,
+              "total": 50
+            },
+            "does_the_law_directly_regulate_the_amount_a_landlord_can_charge_as_a_fee_for_lat": {
+              "accuracy": 1.0,
+              "correct": 12,
+              "total": 12
+            },
+            "does_the_law_require_a_tenant_to_pay_a_bond_in_order_to_appeal_an_eviction_judgm": {
+              "accuracy": 0.7380952380952381,
+              "correct": 31,
+              "total": 42
+            },
+            "does_the_law_require_that_landlords_have_a_just_cause_to_terminate_a_tenancy_at_": {
+              "accuracy": 1.0,
+              "correct": 5,
+              "total": 5
+            },
+            "does_the_law_require_the_landlord_to_give_the_tenant_notice_to_vacate_the_proper": {
+              "accuracy": 0.9767441860465116,
+              "correct": 42,
+              "total": 43
+            },
+            "does_the_law_require_the_tenant_to_respond_to_an_eviction_action_before_a_hearin": {
+              "accuracy": 0.9285714285714286,
+              "correct": 13,
+              "total": 14
+            },
+            "does_the_law_specify_a_minimum_number_of_days_a_tenant_can_be_late_on_rent_befor": {
+              "accuracy": 0.7317073170731707,
+              "correct": 30,
+              "total": 41
+            },
+            "does_the_law_specify_rebuttals_available_to_a_tenant": {
+              "accuracy": 0.9210526315789473,
+              "correct": 35,
+              "total": 38
+            },
+            "does_the_law_specify_the_type(s)_of_landlord(s)_regulated": {
+              "accuracy": 0.7894736842105263,
+              "correct": 30,
+              "total": 38
+            },
+            "does_the_state_territory_have_a_law_regarding_mediation_proceedings_for_eviction": {
+              "accuracy": 0.3333333333333333,
+              "correct": 3,
+              "total": 9
+            },
+            "for_what_cause_may_a_landlord_evict_a_tenant": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "for_what_eviction_cases_are_records_automatically_made_inaccessible": {
+              "accuracy": 0.6,
+              "correct": 21,
+              "total": 35
+            },
+            "for_what_reason_can_a_tenant_request_that_the_issuance_of_a_writ_be_stayed": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "for_what_reasons_must_a_landlord_halt_the_eviction_process_after_filing_but_prio": {
+              "accuracy": 0.46,
+              "correct": 23,
+              "total": 50
+            },
+            "for_which_cause_must_a_landlord_accept_a_tenant's_attempt_to_cure": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "in_eviction_proceedings,_for_how_long_does_the_filing_of_an_appeal_stay_an_execu": {
+              "accuracy": 0.8333333333333334,
+              "correct": 15,
+              "total": 18
+            },
+            "in_which_court_are_eviction_cases_first_heard": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "is_all_documentation_related_to_the_eviction_action_made_inaccessible": {
+              "accuracy": 0.3333333333333333,
+              "correct": 2,
+              "total": 6
+            },
+            "is_there_a_law_regulating_access_to_eviction_records": {
+              "accuracy": 1.0,
+              "correct": 6,
+              "total": 6
+            },
+            "is_there_a_state_territory_law_regulating_residential_evictions": {
+              "accuracy": 0.9767441860465116,
+              "correct": 42,
+              "total": 43
+            },
+            "on_what_basis_is_it_unlawful_to_evict_a_tenant_under_state_territory_law": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "what_are_the_primary_methods_of_service_that_are_permitted_for_an_eviction_actio": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "what_are_the_secondary_methods_of_service_that_are_permitted_for_an_eviction_act": {
+              "accuracy": 0.5,
+              "correct": 25,
+              "total": 50
+            },
+            "what_circumstances_postpone_the_execution_of_a_writ_of_eviction": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "what_entity_is_responsible_for_executing_a_writ_of_eviction": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "what_information_does_the_law_require_that_landlords_provide_when_giving_tenants": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "what_is_covered_by_laws_regulating_access_to_eviction_records": {
+              "accuracy": 0.5833333333333334,
+              "correct": 14,
+              "total": 24
+            },
+            "what_must_be_included_on_summons_served_to_tennants_prior_to_eviction_hearings": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "what_protection,_if_any,_does_the_law_offer_for_tenants_residing_in_property_tha": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "what_protection,_if_any,_does_the_law_offer_tenants_when_the_landlord_wants_to_s": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "what_rebuttals_are_available_to_a_tenant_subject_to_eviction_proceedings": {
+              "accuracy": 0.42,
+              "correct": 21,
+              "total": 50
+            },
+            "what_remedies_are_available_to_a_tenant_who_is_unlawfully_evicted": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "what_term_is_used_to_refer_to_the_order_from_the_court_to_the_authorities_to_rem": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "what_type(s)_of_landlord(s)_does_state_territory_eviction_law_explicitly_regulat": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "which_landlords,_if_any,_does_the_law_require_to_be_represented_by_an_attorney": {
+              "accuracy": 0.3333333333333333,
+              "correct": 2,
+              "total": 6
+            }
+          }
+        },
+        "barexam": {
+          "overall_accuracy": 0.452991452991453,
+          "num_tasks": 1,
+          "per_task": {
+            "mbe": {
+              "accuracy": 0.452991452991453,
+              "correct": 53,
+              "total": 117
+            }
+          }
+        },
+        "lexam": {
+          "overall_accuracy": 0.09606986899563319,
+          "num_tasks": 1,
+          "per_task": {
+            "mcq_32": {
+              "accuracy": 0.09606986899563319,
+              "correct": 22,
+              "total": 229
+            }
+          }
+        }
+      }
+    },
+    {
+      "model_key": "gpt-5.4-nano",
+      "display_name": "GPT-5.4 Nano",
+      "provider": "openai",
+      "developer": "OpenAI",
+      "open_weight": false,
+      "evaluated_at": "2026-04-07T14:19:40.446237+00:00",
+      "overall_accuracy": 0.43569087176833676,
+      "benchmarks": {
+        "legalbench": {
+          "overall_accuracy": 0.6214090969034418,
+          "num_tasks": 159,
+          "per_task": {
+            "abercrombie": {
+              "accuracy": 0.48,
+              "correct": 24,
+              "total": 50
+            },
+            "canada_tax_court_outcomes": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "consumer_contracts_qa": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "contract_nli_confidentiality_of_agreement": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "contract_nli_explicit_identification": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "contract_nli_inclusion_of_verbally_conveyed_information": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "contract_nli_limited_use": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "contract_nli_no_licensing": {
+              "accuracy": 0.64,
+              "correct": 32,
+              "total": 50
+            },
+            "contract_nli_notice_on_compelled_disclosure": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "contract_nli_permissible_acquirement_of_similar_information": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "contract_nli_permissible_copy": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "contract_nli_permissible_development_of_similar_information": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "contract_nli_permissible_post-agreement_possession": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "contract_nli_return_of_confidential_information": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "contract_nli_sharing_with_employees": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "contract_nli_sharing_with_third-parties": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "contract_nli_survival_of_obligations": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "contract_qa": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "corporate_lobbying": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "cuad_affiliate_license-licensee": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_affiliate_license-licensor": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "cuad_anti-assignment": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "cuad_audit_rights": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_cap_on_liability": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "cuad_change_of_control": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "cuad_competitive_restriction_exception": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "cuad_covenant_not_to_sue": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "cuad_effective_date": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "cuad_exclusivity": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "cuad_expiration_date": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "cuad_governing_law": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "cuad_insurance": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "cuad_ip_ownership_assignment": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "cuad_irrevocable_or_perpetual_license": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "cuad_joint_ip_ownership": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "cuad_license_grant": {
+              "accuracy": 0.96,
+              "correct": 48,
+              "total": 50
+            },
+            "cuad_liquidated_damages": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "cuad_minimum_commitment": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "cuad_most_favored_nation": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "cuad_no-solicit_of_customers": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "cuad_no-solicit_of_employees": {
+              "accuracy": 1.0,
+              "correct": 50,
+              "total": 50
+            },
+            "cuad_non-compete": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "cuad_non-disparagement": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_non-transferable_license": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "cuad_notice_period_to_terminate_renewal": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "cuad_post-termination_services": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_price_restrictions": {
+              "accuracy": 0.8043478260869565,
+              "correct": 37,
+              "total": 46
+            },
+            "cuad_renewal_term": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "cuad_revenue-profit_sharing": {
+              "accuracy": 0.64,
+              "correct": 32,
+              "total": 50
+            },
+            "cuad_rofr-rofo-rofn": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "cuad_source_code_escrow": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "cuad_termination_for_convenience": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "cuad_third_party_beneficiary": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "cuad_uncapped_liability": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "cuad_unlimited-all-you-can-eat-license": {
+              "accuracy": 0.8541666666666666,
+              "correct": 41,
+              "total": 48
+            },
+            "cuad_volume_restriction": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "cuad_warranty_duration": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "definition_classification": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "definition_extraction": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "diversity_1": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "diversity_2": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "diversity_3": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "diversity_4": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "diversity_5": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "diversity_6": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "function_of_decision_section": {
+              "accuracy": 0.2,
+              "correct": 10,
+              "total": 50
+            },
+            "hearsay": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "insurance_policy_interpretation": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "international_citizenship_questions": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "jcrew_blocker": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "learned_hands_benefits": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "learned_hands_business": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "learned_hands_consumer": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "learned_hands_courts": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "learned_hands_crime": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "learned_hands_divorce": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "learned_hands_domestic_violence": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "learned_hands_education": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "learned_hands_employment": {
+              "accuracy": 0.8,
+              "correct": 40,
+              "total": 50
+            },
+            "learned_hands_estates": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "learned_hands_family": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "learned_hands_health": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "learned_hands_housing": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "learned_hands_immigration": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "learned_hands_torts": {
+              "accuracy": 0.66,
+              "correct": 33,
+              "total": 50
+            },
+            "learned_hands_traffic": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "legal_reasoning_causality": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "maud_ability_to_consummate_concept_is_subject_to_mae_carveouts": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "maud_accuracy_of_fundamental_target_rws_bringdown_standard": {
+              "accuracy": 0.28,
+              "correct": 14,
+              "total": 50
+            },
+            "maud_accuracy_of_target_capitalization_rw_(outstanding_shares)_bringdown_standard_answer": {
+              "accuracy": 0.18,
+              "correct": 9,
+              "total": 50
+            },
+            "maud_accuracy_of_target_general_rw_bringdown_timing_answer": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "maud_additional_matching_rights_period_for_modifications_(cor)": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "maud_application_of_buyer_consent_requirement_(negative_interim_covenant)": {
+              "accuracy": 0.3,
+              "correct": 15,
+              "total": 50
+            },
+            "maud_buyer_consent_requirement_(ordinary_course)": {
+              "accuracy": 0.94,
+              "correct": 47,
+              "total": 50
+            },
+            "maud_change_in_law__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "maud_changes_in_gaap_or_other_accounting_principles__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "maud_cor_permitted_in_response_to_intervening_event": {
+              "accuracy": 0.9,
+              "correct": 45,
+              "total": 50
+            },
+            "maud_cor_permitted_with_board_fiduciary_determination_only": {
+              "accuracy": 0.14,
+              "correct": 7,
+              "total": 50
+            },
+            "maud_cor_standard_(intervening_event)": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "maud_cor_standard_(superior_offer)": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "maud_definition_contains_knowledge_requirement_-_answer": {
+              "accuracy": 0.7,
+              "correct": 35,
+              "total": 50
+            },
+            "maud_definition_includes_asset_deals": {
+              "accuracy": 0.5,
+              "correct": 25,
+              "total": 50
+            },
+            "maud_definition_includes_stock_deals": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "maud_fiduciary_exception__board_determination_standard": {
+              "accuracy": 0.4,
+              "correct": 20,
+              "total": 50
+            },
+            "maud_fiduciary_exception_board_determination_trigger_(no_shop)": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "maud_financial_point_of_view_is_the_sole_consideration": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "maud_fls_(mae)_standard": {
+              "accuracy": 0.16,
+              "correct": 8,
+              "total": 50
+            },
+            "maud_general_economic_and_financial_conditions_subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "maud_includes_consistent_with_past_practice": {
+              "accuracy": 0.92,
+              "correct": 46,
+              "total": 50
+            },
+            "maud_initial_matching_rights_period_(cor)": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "maud_initial_matching_rights_period_(ftr)": {
+              "accuracy": 0.36,
+              "correct": 18,
+              "total": 50
+            },
+            "maud_intervening_event_-_required_to_occur_after_signing_-_answer": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "maud_knowledge_definition": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "maud_liability_standard_for_no-shop_breach_by_target_non-do_representatives": {
+              "accuracy": 0.46,
+              "correct": 23,
+              "total": 50
+            },
+            "maud_ordinary_course_efforts_standard": {
+              "accuracy": 0.4,
+              "correct": 20,
+              "total": 50
+            },
+            "maud_pandemic_or_other_public_health_event__subject_to_disproportionate_impact_modifier": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "maud_pandemic_or_other_public_health_event_specific_reference_to_pandemic-related_governmental_responses_or_measures": {
+              "accuracy": 0.78,
+              "correct": 39,
+              "total": 50
+            },
+            "maud_relational_language_(mae)_applies_to": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "maud_specific_performance": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "maud_tail_period_length": {
+              "accuracy": 0.42,
+              "correct": 21,
+              "total": 50
+            },
+            "maud_type_of_consideration": {
+              "accuracy": 0.96,
+              "correct": 48,
+              "total": 50
+            },
+            "nys_judicial_ethics": {
+              "accuracy": 0.6,
+              "correct": 30,
+              "total": 50
+            },
+            "opp115_data_retention": {
+              "accuracy": 0.58,
+              "correct": 29,
+              "total": 50
+            },
+            "opp115_data_security": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "opp115_do_not_track": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "opp115_first_party_collection_use": {
+              "accuracy": 0.42,
+              "correct": 21,
+              "total": 50
+            },
+            "opp115_international_and_specific_audiences": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "opp115_policy_change": {
+              "accuracy": 0.34,
+              "correct": 17,
+              "total": 50
+            },
+            "opp115_third_party_sharing_collection": {
+              "accuracy": 0.36,
+              "correct": 18,
+              "total": 50
+            },
+            "opp115_user_access,_edit_and_deletion": {
+              "accuracy": 0.12,
+              "correct": 6,
+              "total": 50
+            },
+            "opp115_user_choice_control": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "oral_argument_question_purpose": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "overruling": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "personal_jurisdiction": {
+              "accuracy": 0.3,
+              "correct": 15,
+              "total": 50
+            },
+            "privacy_policy_entailment": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "privacy_policy_qa": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "proa": {
+              "accuracy": 0.06,
+              "correct": 3,
+              "total": 50
+            },
+            "sara_entailment": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "sara_numeric": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "scalr": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "ssla_company_defendants": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "ssla_individual_defendants": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 50
+            },
+            "ssla_plaintiff": {
+              "accuracy": 0.3,
+              "correct": 15,
+              "total": 50
+            },
+            "successor_liability": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 47
+            },
+            "supply_chain_disclosure_best_practice_accountability": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_audits": {
+              "accuracy": 0.38,
+              "correct": 19,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_certification": {
+              "accuracy": 0.4,
+              "correct": 20,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_training": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "supply_chain_disclosure_best_practice_verification": {
+              "accuracy": 0.48,
+              "correct": 24,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_accountability": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_audits": {
+              "accuracy": 0.4,
+              "correct": 20,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_certification": {
+              "accuracy": 0.52,
+              "correct": 26,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_training": {
+              "accuracy": 0.32,
+              "correct": 16,
+              "total": 50
+            },
+            "supply_chain_disclosure_disclosed_verification": {
+              "accuracy": 0.38,
+              "correct": 19,
+              "total": 50
+            },
+            "telemarketing_sales_rule": {
+              "accuracy": 0.425531914893617,
+              "correct": 20,
+              "total": 47
+            },
+            "textualism_tool_dictionaries": {
+              "accuracy": 0.02,
+              "correct": 1,
+              "total": 50
+            },
+            "textualism_tool_plain": {
+              "accuracy": 0.24,
+              "correct": 12,
+              "total": 50
+            },
+            "ucc_v_common_law": {
+              "accuracy": 0.98,
+              "correct": 49,
+              "total": 50
+            },
+            "unfair_tos": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            }
+          }
+        },
+        "barexam": {
+          "overall_accuracy": 0.48717948717948717,
+          "num_tasks": 1,
+          "per_task": {
+            "mbe": {
+              "accuracy": 0.48717948717948717,
+              "correct": 57,
+              "total": 117
+            }
+          }
+        },
+        "lexam": {
+          "overall_accuracy": 0.07860262008733625,
+          "num_tasks": 1,
+          "per_task": {
+            "mcq_32": {
+              "accuracy": 0.07860262008733625,
+              "correct": 18,
+              "total": 229
+            }
+          }
+        },
+        "legal_hallucinations": {
+          "overall_accuracy": 0.3275,
+          "num_tasks": 4,
+          "per_task": {
+            "affirm_reverse": {
+              "accuracy": 0.53,
+              "correct": 53,
+              "total": 100
+            },
+            "case_existence": {
+              "accuracy": 0.75,
+              "correct": 75,
+              "total": 100
+            },
+            "citation_retrieval": {
+              "accuracy": 0.0,
+              "correct": 0,
+              "total": 100
+            },
+            "year_overruled": {
+              "accuracy": 0.03,
+              "correct": 3,
+              "total": 100
+            }
+          }
+        },
+        "housingqa": {
+          "overall_accuracy": 0.6637631546714184,
+          "num_tasks": 41,
+          "per_task": {
+            "can_a_tenant_request_that_records_be_made_inaccessible": {
+              "accuracy": 0.8,
+              "correct": 4,
+              "total": 5
+            },
+            "does_a_landlord_waive_their_right_to_evict_for_nonpayment_of_rent_by_accepting_p": {
+              "accuracy": 0.5,
+              "correct": 18,
+              "total": 36
+            },
+            "does_a_tenant_forfeit_the_right_to_an_eviction_hearing_by_failing_to_respond_to_": {
+              "accuracy": 0.23076923076923078,
+              "correct": 6,
+              "total": 26
+            },
+            "does_a_tenant_have_to_request_a_stay_of_execution_for_an_appeal": {
+              "accuracy": 0.21739130434782608,
+              "correct": 5,
+              "total": 23
+            },
+            "does_the_filing_of_an_appeal_stay_the_execution_of_a_writ": {
+              "accuracy": 0.4827586206896552,
+              "correct": 14,
+              "total": 29
+            },
+            "does_the_jurisdiction_have_separate_legal_provisions_for_different_types_of_land": {
+              "accuracy": 0.7777777777777778,
+              "correct": 28,
+              "total": 36
+            },
+            "does_the_law_allow_a_landlord_to_include_a_lease_provision_whereby_a_tenant_waiv": {
+              "accuracy": 0.44,
+              "correct": 22,
+              "total": 50
+            },
+            "does_the_law_directly_regulate_the_amount_a_landlord_can_charge_as_a_fee_for_lat": {
+              "accuracy": 1.0,
+              "correct": 12,
+              "total": 12
+            },
+            "does_the_law_require_a_tenant_to_pay_a_bond_in_order_to_appeal_an_eviction_judgm": {
+              "accuracy": 0.6904761904761905,
+              "correct": 29,
+              "total": 42
+            },
+            "does_the_law_require_that_landlords_have_a_just_cause_to_terminate_a_tenancy_at_": {
+              "accuracy": 0.4,
+              "correct": 2,
+              "total": 5
+            },
+            "does_the_law_require_the_landlord_to_give_the_tenant_notice_to_vacate_the_proper": {
+              "accuracy": 0.7441860465116279,
+              "correct": 32,
+              "total": 43
+            },
+            "does_the_law_require_the_tenant_to_respond_to_an_eviction_action_before_a_hearin": {
+              "accuracy": 0.5,
+              "correct": 7,
+              "total": 14
+            },
+            "does_the_law_specify_a_minimum_number_of_days_a_tenant_can_be_late_on_rent_befor": {
+              "accuracy": 0.6829268292682927,
+              "correct": 28,
+              "total": 41
+            },
+            "does_the_law_specify_rebuttals_available_to_a_tenant": {
+              "accuracy": 0.6052631578947368,
+              "correct": 23,
+              "total": 38
+            },
+            "does_the_law_specify_the_type(s)_of_landlord(s)_regulated": {
+              "accuracy": 0.8421052631578947,
+              "correct": 32,
+              "total": 38
+            },
+            "does_the_state_territory_have_a_law_regarding_mediation_proceedings_for_eviction": {
+              "accuracy": 0.3333333333333333,
+              "correct": 3,
+              "total": 9
+            },
+            "for_what_cause_may_a_landlord_evict_a_tenant": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "for_what_eviction_cases_are_records_automatically_made_inaccessible": {
+              "accuracy": 0.7428571428571429,
+              "correct": 26,
+              "total": 35
+            },
+            "for_what_reason_can_a_tenant_request_that_the_issuance_of_a_writ_be_stayed": {
+              "accuracy": 0.56,
+              "correct": 28,
+              "total": 50
+            },
+            "for_what_reasons_must_a_landlord_halt_the_eviction_process_after_filing_but_prio": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "for_which_cause_must_a_landlord_accept_a_tenant's_attempt_to_cure": {
+              "accuracy": 0.62,
+              "correct": 31,
+              "total": 50
+            },
+            "in_eviction_proceedings,_for_how_long_does_the_filing_of_an_appeal_stay_an_execu": {
+              "accuracy": 0.6111111111111112,
+              "correct": 11,
+              "total": 18
+            },
+            "in_which_court_are_eviction_cases_first_heard": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "is_all_documentation_related_to_the_eviction_action_made_inaccessible": {
+              "accuracy": 0.3333333333333333,
+              "correct": 2,
+              "total": 6
+            },
+            "is_there_a_law_regulating_access_to_eviction_records": {
+              "accuracy": 1.0,
+              "correct": 6,
+              "total": 6
+            },
+            "is_there_a_state_territory_law_regulating_residential_evictions": {
+              "accuracy": 1.0,
+              "correct": 43,
+              "total": 43
+            },
+            "on_what_basis_is_it_unlawful_to_evict_a_tenant_under_state_territory_law": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "what_are_the_primary_methods_of_service_that_are_permitted_for_an_eviction_actio": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "what_are_the_secondary_methods_of_service_that_are_permitted_for_an_eviction_act": {
+              "accuracy": 0.54,
+              "correct": 27,
+              "total": 50
+            },
+            "what_circumstances_postpone_the_execution_of_a_writ_of_eviction": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "what_entity_is_responsible_for_executing_a_writ_of_eviction": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "what_information_does_the_law_require_that_landlords_provide_when_giving_tenants": {
+              "accuracy": 0.82,
+              "correct": 41,
+              "total": 50
+            },
+            "what_is_covered_by_laws_regulating_access_to_eviction_records": {
+              "accuracy": 0.6666666666666666,
+              "correct": 16,
+              "total": 24
+            },
+            "what_must_be_included_on_summons_served_to_tennants_prior_to_eviction_hearings": {
+              "accuracy": 0.88,
+              "correct": 44,
+              "total": 50
+            },
+            "what_protection,_if_any,_does_the_law_offer_for_tenants_residing_in_property_tha": {
+              "accuracy": 0.72,
+              "correct": 36,
+              "total": 50
+            },
+            "what_protection,_if_any,_does_the_law_offer_tenants_when_the_landlord_wants_to_s": {
+              "accuracy": 0.76,
+              "correct": 38,
+              "total": 50
+            },
+            "what_rebuttals_are_available_to_a_tenant_subject_to_eviction_proceedings": {
+              "accuracy": 0.64,
+              "correct": 32,
+              "total": 50
+            },
+            "what_remedies_are_available_to_a_tenant_who_is_unlawfully_evicted": {
+              "accuracy": 0.84,
+              "correct": 42,
+              "total": 50
+            },
+            "what_term_is_used_to_refer_to_the_order_from_the_court_to_the_authorities_to_rem": {
+              "accuracy": 0.86,
+              "correct": 43,
+              "total": 50
+            },
+            "what_type(s)_of_landlord(s)_does_state_territory_eviction_law_explicitly_regulat": {
+              "accuracy": 0.68,
+              "correct": 34,
+              "total": 50
+            },
+            "which_landlords,_if_any,_does_the_law_require_to_be_represented_by_an_attorney": {
+              "accuracy": 0.3333333333333333,
+              "correct": 2,
+              "total": 6
+            }
+          }
+        }
+      }
+    },
+    {
       "model_key": "nemotron-3-super",
       "display_name": "Nemotron 3 Super 120B",
       "provider": "openrouter",
@@ -26792,1077 +28934,6 @@
             "which_landlords,_if_any,_does_the_law_require_to_be_represented_by_an_attorney": {
               "accuracy": 0.5,
               "correct": 3,
-              "total": 6
-            }
-          }
-        }
-      }
-    },
-    {
-      "model_key": "gpt-5.4-nano",
-      "display_name": "GPT-5.4 Nano",
-      "provider": "openai",
-      "developer": "OpenAI",
-      "open_weight": false,
-      "evaluated_at": "2026-04-06T20:32:23.086065+00:00",
-      "overall_accuracy": 0.3382549743324393,
-      "benchmarks": {
-        "legalbench": {
-          "overall_accuracy": 0.6214090969034418,
-          "num_tasks": 159,
-          "per_task": {
-            "abercrombie": {
-              "accuracy": 0.48,
-              "correct": 24,
-              "total": 50
-            },
-            "canada_tax_court_outcomes": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "consumer_contracts_qa": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "contract_nli_confidentiality_of_agreement": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "contract_nli_explicit_identification": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "contract_nli_inclusion_of_verbally_conveyed_information": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "contract_nli_limited_use": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "contract_nli_no_licensing": {
-              "accuracy": 0.64,
-              "correct": 32,
-              "total": 50
-            },
-            "contract_nli_notice_on_compelled_disclosure": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "contract_nli_permissible_acquirement_of_similar_information": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "contract_nli_permissible_copy": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "contract_nli_permissible_development_of_similar_information": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "contract_nli_permissible_post-agreement_possession": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "contract_nli_return_of_confidential_information": {
-              "accuracy": 0.94,
-              "correct": 47,
-              "total": 50
-            },
-            "contract_nli_sharing_with_employees": {
-              "accuracy": 0.94,
-              "correct": 47,
-              "total": 50
-            },
-            "contract_nli_sharing_with_third-parties": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "contract_nli_survival_of_obligations": {
-              "accuracy": 0.94,
-              "correct": 47,
-              "total": 50
-            },
-            "contract_qa": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "corporate_lobbying": {
-              "accuracy": 0.7,
-              "correct": 35,
-              "total": 50
-            },
-            "cuad_affiliate_license-licensee": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "cuad_affiliate_license-licensor": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "cuad_anti-assignment": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "cuad_audit_rights": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "cuad_cap_on_liability": {
-              "accuracy": 0.6,
-              "correct": 30,
-              "total": 50
-            },
-            "cuad_change_of_control": {
-              "accuracy": 0.76,
-              "correct": 38,
-              "total": 50
-            },
-            "cuad_competitive_restriction_exception": {
-              "accuracy": 0.7,
-              "correct": 35,
-              "total": 50
-            },
-            "cuad_covenant_not_to_sue": {
-              "accuracy": 0.78,
-              "correct": 39,
-              "total": 50
-            },
-            "cuad_effective_date": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "cuad_exclusivity": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "cuad_expiration_date": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "cuad_governing_law": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "cuad_insurance": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "cuad_ip_ownership_assignment": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "cuad_irrevocable_or_perpetual_license": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "cuad_joint_ip_ownership": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "cuad_license_grant": {
-              "accuracy": 0.96,
-              "correct": 48,
-              "total": 50
-            },
-            "cuad_liquidated_damages": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "cuad_minimum_commitment": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "cuad_most_favored_nation": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "cuad_no-solicit_of_customers": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "cuad_no-solicit_of_employees": {
-              "accuracy": 1.0,
-              "correct": 50,
-              "total": 50
-            },
-            "cuad_non-compete": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "cuad_non-disparagement": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "cuad_non-transferable_license": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "cuad_notice_period_to_terminate_renewal": {
-              "accuracy": 0.94,
-              "correct": 47,
-              "total": 50
-            },
-            "cuad_post-termination_services": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "cuad_price_restrictions": {
-              "accuracy": 0.8043478260869565,
-              "correct": 37,
-              "total": 46
-            },
-            "cuad_renewal_term": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "cuad_revenue-profit_sharing": {
-              "accuracy": 0.64,
-              "correct": 32,
-              "total": 50
-            },
-            "cuad_rofr-rofo-rofn": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "cuad_source_code_escrow": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "cuad_termination_for_convenience": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "cuad_third_party_beneficiary": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "cuad_uncapped_liability": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "cuad_unlimited-all-you-can-eat-license": {
-              "accuracy": 0.8541666666666666,
-              "correct": 41,
-              "total": 48
-            },
-            "cuad_volume_restriction": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "cuad_warranty_duration": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "definition_classification": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "definition_extraction": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "diversity_1": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "diversity_2": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "diversity_3": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "diversity_4": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "diversity_5": {
-              "accuracy": 0.6,
-              "correct": 30,
-              "total": 50
-            },
-            "diversity_6": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "function_of_decision_section": {
-              "accuracy": 0.2,
-              "correct": 10,
-              "total": 50
-            },
-            "hearsay": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "insurance_policy_interpretation": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "international_citizenship_questions": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "jcrew_blocker": {
-              "accuracy": 0.56,
-              "correct": 28,
-              "total": 50
-            },
-            "learned_hands_benefits": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "learned_hands_business": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "learned_hands_consumer": {
-              "accuracy": 0.6,
-              "correct": 30,
-              "total": 50
-            },
-            "learned_hands_courts": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "learned_hands_crime": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "learned_hands_divorce": {
-              "accuracy": 0.78,
-              "correct": 39,
-              "total": 50
-            },
-            "learned_hands_domestic_violence": {
-              "accuracy": 0.7,
-              "correct": 35,
-              "total": 50
-            },
-            "learned_hands_education": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "learned_hands_employment": {
-              "accuracy": 0.8,
-              "correct": 40,
-              "total": 50
-            },
-            "learned_hands_estates": {
-              "accuracy": 0.56,
-              "correct": 28,
-              "total": 50
-            },
-            "learned_hands_family": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "learned_hands_health": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "learned_hands_housing": {
-              "accuracy": 0.76,
-              "correct": 38,
-              "total": 50
-            },
-            "learned_hands_immigration": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "learned_hands_torts": {
-              "accuracy": 0.66,
-              "correct": 33,
-              "total": 50
-            },
-            "learned_hands_traffic": {
-              "accuracy": 0.72,
-              "correct": 36,
-              "total": 50
-            },
-            "legal_reasoning_causality": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "maud_ability_to_consummate_concept_is_subject_to_mae_carveouts": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "maud_accuracy_of_fundamental_target_rws_bringdown_standard": {
-              "accuracy": 0.28,
-              "correct": 14,
-              "total": 50
-            },
-            "maud_accuracy_of_target_capitalization_rw_(outstanding_shares)_bringdown_standard_answer": {
-              "accuracy": 0.18,
-              "correct": 9,
-              "total": 50
-            },
-            "maud_accuracy_of_target_general_rw_bringdown_timing_answer": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "maud_additional_matching_rights_period_for_modifications_(cor)": {
-              "accuracy": 0.7,
-              "correct": 35,
-              "total": 50
-            },
-            "maud_application_of_buyer_consent_requirement_(negative_interim_covenant)": {
-              "accuracy": 0.3,
-              "correct": 15,
-              "total": 50
-            },
-            "maud_buyer_consent_requirement_(ordinary_course)": {
-              "accuracy": 0.94,
-              "correct": 47,
-              "total": 50
-            },
-            "maud_change_in_law__subject_to_disproportionate_impact_modifier": {
-              "accuracy": 0.76,
-              "correct": 38,
-              "total": 50
-            },
-            "maud_changes_in_gaap_or_other_accounting_principles__subject_to_disproportionate_impact_modifier": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "maud_cor_permitted_in_response_to_intervening_event": {
-              "accuracy": 0.9,
-              "correct": 45,
-              "total": 50
-            },
-            "maud_cor_permitted_with_board_fiduciary_determination_only": {
-              "accuracy": 0.14,
-              "correct": 7,
-              "total": 50
-            },
-            "maud_cor_standard_(intervening_event)": {
-              "accuracy": 0.62,
-              "correct": 31,
-              "total": 50
-            },
-            "maud_cor_standard_(superior_offer)": {
-              "accuracy": 0.56,
-              "correct": 28,
-              "total": 50
-            },
-            "maud_definition_contains_knowledge_requirement_-_answer": {
-              "accuracy": 0.7,
-              "correct": 35,
-              "total": 50
-            },
-            "maud_definition_includes_asset_deals": {
-              "accuracy": 0.5,
-              "correct": 25,
-              "total": 50
-            },
-            "maud_definition_includes_stock_deals": {
-              "accuracy": 0.62,
-              "correct": 31,
-              "total": 50
-            },
-            "maud_fiduciary_exception__board_determination_standard": {
-              "accuracy": 0.4,
-              "correct": 20,
-              "total": 50
-            },
-            "maud_fiduciary_exception_board_determination_trigger_(no_shop)": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "maud_financial_point_of_view_is_the_sole_consideration": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "maud_fls_(mae)_standard": {
-              "accuracy": 0.16,
-              "correct": 8,
-              "total": 50
-            },
-            "maud_general_economic_and_financial_conditions_subject_to_disproportionate_impact_modifier": {
-              "accuracy": 0.6,
-              "correct": 30,
-              "total": 50
-            },
-            "maud_includes_consistent_with_past_practice": {
-              "accuracy": 0.92,
-              "correct": 46,
-              "total": 50
-            },
-            "maud_initial_matching_rights_period_(cor)": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "maud_initial_matching_rights_period_(ftr)": {
-              "accuracy": 0.36,
-              "correct": 18,
-              "total": 50
-            },
-            "maud_intervening_event_-_required_to_occur_after_signing_-_answer": {
-              "accuracy": 0.72,
-              "correct": 36,
-              "total": 50
-            },
-            "maud_knowledge_definition": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "maud_liability_standard_for_no-shop_breach_by_target_non-do_representatives": {
-              "accuracy": 0.46,
-              "correct": 23,
-              "total": 50
-            },
-            "maud_ordinary_course_efforts_standard": {
-              "accuracy": 0.4,
-              "correct": 20,
-              "total": 50
-            },
-            "maud_pandemic_or_other_public_health_event__subject_to_disproportionate_impact_modifier": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "maud_pandemic_or_other_public_health_event_specific_reference_to_pandemic-related_governmental_responses_or_measures": {
-              "accuracy": 0.78,
-              "correct": 39,
-              "total": 50
-            },
-            "maud_relational_language_(mae)_applies_to": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "maud_specific_performance": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "maud_tail_period_length": {
-              "accuracy": 0.42,
-              "correct": 21,
-              "total": 50
-            },
-            "maud_type_of_consideration": {
-              "accuracy": 0.96,
-              "correct": 48,
-              "total": 50
-            },
-            "nys_judicial_ethics": {
-              "accuracy": 0.6,
-              "correct": 30,
-              "total": 50
-            },
-            "opp115_data_retention": {
-              "accuracy": 0.58,
-              "correct": 29,
-              "total": 50
-            },
-            "opp115_data_security": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "opp115_do_not_track": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "opp115_first_party_collection_use": {
-              "accuracy": 0.42,
-              "correct": 21,
-              "total": 50
-            },
-            "opp115_international_and_specific_audiences": {
-              "accuracy": 0.54,
-              "correct": 27,
-              "total": 50
-            },
-            "opp115_policy_change": {
-              "accuracy": 0.34,
-              "correct": 17,
-              "total": 50
-            },
-            "opp115_third_party_sharing_collection": {
-              "accuracy": 0.36,
-              "correct": 18,
-              "total": 50
-            },
-            "opp115_user_access,_edit_and_deletion": {
-              "accuracy": 0.12,
-              "correct": 6,
-              "total": 50
-            },
-            "opp115_user_choice_control": {
-              "accuracy": 0.54,
-              "correct": 27,
-              "total": 50
-            },
-            "oral_argument_question_purpose": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "overruling": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "personal_jurisdiction": {
-              "accuracy": 0.3,
-              "correct": 15,
-              "total": 50
-            },
-            "privacy_policy_entailment": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "privacy_policy_qa": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "proa": {
-              "accuracy": 0.06,
-              "correct": 3,
-              "total": 50
-            },
-            "sara_entailment": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "sara_numeric": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "scalr": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "ssla_company_defendants": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "ssla_individual_defendants": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 50
-            },
-            "ssla_plaintiff": {
-              "accuracy": 0.3,
-              "correct": 15,
-              "total": 50
-            },
-            "successor_liability": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 47
-            },
-            "supply_chain_disclosure_best_practice_accountability": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "supply_chain_disclosure_best_practice_audits": {
-              "accuracy": 0.38,
-              "correct": 19,
-              "total": 50
-            },
-            "supply_chain_disclosure_best_practice_certification": {
-              "accuracy": 0.4,
-              "correct": 20,
-              "total": 50
-            },
-            "supply_chain_disclosure_best_practice_training": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "supply_chain_disclosure_best_practice_verification": {
-              "accuracy": 0.48,
-              "correct": 24,
-              "total": 50
-            },
-            "supply_chain_disclosure_disclosed_accountability": {
-              "accuracy": 0.54,
-              "correct": 27,
-              "total": 50
-            },
-            "supply_chain_disclosure_disclosed_audits": {
-              "accuracy": 0.4,
-              "correct": 20,
-              "total": 50
-            },
-            "supply_chain_disclosure_disclosed_certification": {
-              "accuracy": 0.52,
-              "correct": 26,
-              "total": 50
-            },
-            "supply_chain_disclosure_disclosed_training": {
-              "accuracy": 0.32,
-              "correct": 16,
-              "total": 50
-            },
-            "supply_chain_disclosure_disclosed_verification": {
-              "accuracy": 0.38,
-              "correct": 19,
-              "total": 50
-            },
-            "telemarketing_sales_rule": {
-              "accuracy": 0.425531914893617,
-              "correct": 20,
-              "total": 47
-            },
-            "textualism_tool_dictionaries": {
-              "accuracy": 0.02,
-              "correct": 1,
-              "total": 50
-            },
-            "textualism_tool_plain": {
-              "accuracy": 0.24,
-              "correct": 12,
-              "total": 50
-            },
-            "ucc_v_common_law": {
-              "accuracy": 0.98,
-              "correct": 49,
-              "total": 50
-            },
-            "unfair_tos": {
-              "accuracy": 0.62,
-              "correct": 31,
-              "total": 50
-            }
-          }
-        },
-        "barexam": {
-          "overall_accuracy": 0.0,
-          "num_tasks": 1,
-          "per_task": {
-            "mbe": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 117
-            }
-          }
-        },
-        "lexam": {
-          "overall_accuracy": 0.07860262008733625,
-          "num_tasks": 1,
-          "per_task": {
-            "mcq_32": {
-              "accuracy": 0.07860262008733625,
-              "correct": 18,
-              "total": 229
-            }
-          }
-        },
-        "legal_hallucinations": {
-          "overall_accuracy": 0.3275,
-          "num_tasks": 4,
-          "per_task": {
-            "affirm_reverse": {
-              "accuracy": 0.53,
-              "correct": 53,
-              "total": 100
-            },
-            "case_existence": {
-              "accuracy": 0.75,
-              "correct": 75,
-              "total": 100
-            },
-            "citation_retrieval": {
-              "accuracy": 0.0,
-              "correct": 0,
-              "total": 100
-            },
-            "year_overruled": {
-              "accuracy": 0.03,
-              "correct": 3,
-              "total": 100
-            }
-          }
-        },
-        "housingqa": {
-          "overall_accuracy": 0.6637631546714184,
-          "num_tasks": 41,
-          "per_task": {
-            "can_a_tenant_request_that_records_be_made_inaccessible": {
-              "accuracy": 0.8,
-              "correct": 4,
-              "total": 5
-            },
-            "does_a_landlord_waive_their_right_to_evict_for_nonpayment_of_rent_by_accepting_p": {
-              "accuracy": 0.5,
-              "correct": 18,
-              "total": 36
-            },
-            "does_a_tenant_forfeit_the_right_to_an_eviction_hearing_by_failing_to_respond_to_": {
-              "accuracy": 0.23076923076923078,
-              "correct": 6,
-              "total": 26
-            },
-            "does_a_tenant_have_to_request_a_stay_of_execution_for_an_appeal": {
-              "accuracy": 0.21739130434782608,
-              "correct": 5,
-              "total": 23
-            },
-            "does_the_filing_of_an_appeal_stay_the_execution_of_a_writ": {
-              "accuracy": 0.4827586206896552,
-              "correct": 14,
-              "total": 29
-            },
-            "does_the_jurisdiction_have_separate_legal_provisions_for_different_types_of_land": {
-              "accuracy": 0.7777777777777778,
-              "correct": 28,
-              "total": 36
-            },
-            "does_the_law_allow_a_landlord_to_include_a_lease_provision_whereby_a_tenant_waiv": {
-              "accuracy": 0.44,
-              "correct": 22,
-              "total": 50
-            },
-            "does_the_law_directly_regulate_the_amount_a_landlord_can_charge_as_a_fee_for_lat": {
-              "accuracy": 1.0,
-              "correct": 12,
-              "total": 12
-            },
-            "does_the_law_require_a_tenant_to_pay_a_bond_in_order_to_appeal_an_eviction_judgm": {
-              "accuracy": 0.6904761904761905,
-              "correct": 29,
-              "total": 42
-            },
-            "does_the_law_require_that_landlords_have_a_just_cause_to_terminate_a_tenancy_at_": {
-              "accuracy": 0.4,
-              "correct": 2,
-              "total": 5
-            },
-            "does_the_law_require_the_landlord_to_give_the_tenant_notice_to_vacate_the_proper": {
-              "accuracy": 0.7441860465116279,
-              "correct": 32,
-              "total": 43
-            },
-            "does_the_law_require_the_tenant_to_respond_to_an_eviction_action_before_a_hearin": {
-              "accuracy": 0.5,
-              "correct": 7,
-              "total": 14
-            },
-            "does_the_law_specify_a_minimum_number_of_days_a_tenant_can_be_late_on_rent_befor": {
-              "accuracy": 0.6829268292682927,
-              "correct": 28,
-              "total": 41
-            },
-            "does_the_law_specify_rebuttals_available_to_a_tenant": {
-              "accuracy": 0.6052631578947368,
-              "correct": 23,
-              "total": 38
-            },
-            "does_the_law_specify_the_type(s)_of_landlord(s)_regulated": {
-              "accuracy": 0.8421052631578947,
-              "correct": 32,
-              "total": 38
-            },
-            "does_the_state_territory_have_a_law_regarding_mediation_proceedings_for_eviction": {
-              "accuracy": 0.3333333333333333,
-              "correct": 3,
-              "total": 9
-            },
-            "for_what_cause_may_a_landlord_evict_a_tenant": {
-              "accuracy": 0.72,
-              "correct": 36,
-              "total": 50
-            },
-            "for_what_eviction_cases_are_records_automatically_made_inaccessible": {
-              "accuracy": 0.7428571428571429,
-              "correct": 26,
-              "total": 35
-            },
-            "for_what_reason_can_a_tenant_request_that_the_issuance_of_a_writ_be_stayed": {
-              "accuracy": 0.56,
-              "correct": 28,
-              "total": 50
-            },
-            "for_what_reasons_must_a_landlord_halt_the_eviction_process_after_filing_but_prio": {
-              "accuracy": 0.54,
-              "correct": 27,
-              "total": 50
-            },
-            "for_which_cause_must_a_landlord_accept_a_tenant's_attempt_to_cure": {
-              "accuracy": 0.62,
-              "correct": 31,
-              "total": 50
-            },
-            "in_eviction_proceedings,_for_how_long_does_the_filing_of_an_appeal_stay_an_execu": {
-              "accuracy": 0.6111111111111112,
-              "correct": 11,
-              "total": 18
-            },
-            "in_which_court_are_eviction_cases_first_heard": {
-              "accuracy": 0.72,
-              "correct": 36,
-              "total": 50
-            },
-            "is_all_documentation_related_to_the_eviction_action_made_inaccessible": {
-              "accuracy": 0.3333333333333333,
-              "correct": 2,
-              "total": 6
-            },
-            "is_there_a_law_regulating_access_to_eviction_records": {
-              "accuracy": 1.0,
-              "correct": 6,
-              "total": 6
-            },
-            "is_there_a_state_territory_law_regulating_residential_evictions": {
-              "accuracy": 1.0,
-              "correct": 43,
-              "total": 43
-            },
-            "on_what_basis_is_it_unlawful_to_evict_a_tenant_under_state_territory_law": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "what_are_the_primary_methods_of_service_that_are_permitted_for_an_eviction_actio": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "what_are_the_secondary_methods_of_service_that_are_permitted_for_an_eviction_act": {
-              "accuracy": 0.54,
-              "correct": 27,
-              "total": 50
-            },
-            "what_circumstances_postpone_the_execution_of_a_writ_of_eviction": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "what_entity_is_responsible_for_executing_a_writ_of_eviction": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "what_information_does_the_law_require_that_landlords_provide_when_giving_tenants": {
-              "accuracy": 0.82,
-              "correct": 41,
-              "total": 50
-            },
-            "what_is_covered_by_laws_regulating_access_to_eviction_records": {
-              "accuracy": 0.6666666666666666,
-              "correct": 16,
-              "total": 24
-            },
-            "what_must_be_included_on_summons_served_to_tennants_prior_to_eviction_hearings": {
-              "accuracy": 0.88,
-              "correct": 44,
-              "total": 50
-            },
-            "what_protection,_if_any,_does_the_law_offer_for_tenants_residing_in_property_tha": {
-              "accuracy": 0.72,
-              "correct": 36,
-              "total": 50
-            },
-            "what_protection,_if_any,_does_the_law_offer_tenants_when_the_landlord_wants_to_s": {
-              "accuracy": 0.76,
-              "correct": 38,
-              "total": 50
-            },
-            "what_rebuttals_are_available_to_a_tenant_subject_to_eviction_proceedings": {
-              "accuracy": 0.64,
-              "correct": 32,
-              "total": 50
-            },
-            "what_remedies_are_available_to_a_tenant_who_is_unlawfully_evicted": {
-              "accuracy": 0.84,
-              "correct": 42,
-              "total": 50
-            },
-            "what_term_is_used_to_refer_to_the_order_from_the_court_to_the_authorities_to_rem": {
-              "accuracy": 0.86,
-              "correct": 43,
-              "total": 50
-            },
-            "what_type(s)_of_landlord(s)_does_state_territory_eviction_law_explicitly_regulat": {
-              "accuracy": 0.68,
-              "correct": 34,
-              "total": 50
-            },
-            "which_landlords,_if_any,_does_the_law_require_to_be_represented_by_an_attorney": {
-              "accuracy": 0.3333333333333333,
-              "correct": 2,
               "total": 6
             }
           }
