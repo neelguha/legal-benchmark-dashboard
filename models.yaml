@@ -183,6 +183,14 @@ models:
     max_tokens: 8192
     open_weight: true
 
+  glm-5.1:
+    provider: openrouter
+    model_id: z-ai/glm-5.1
+    display_name: GLM-5.1
+    developer: Zhipu AI
+    max_tokens: 8192
+    open_weight: true
+
   nemotron-3-super:
     provider: openrouter
     model_id: nvidia/nemotron-3-super-120b-a12b
